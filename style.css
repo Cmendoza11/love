@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f471a2;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+/* Heart Icon */
+.heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 1s ease;
+}
+
+.heart img {
+  width: 60px;
+  height: auto;
+  animation: beat 2s ease-in-out infinite;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Move the heart down */
+.heart.move {
+  transform: translate(-50%, 250%);
+}
+
+/* The letter/card */
+.letter-card {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: top 1s ease, opacity 1s ease;
+  z-index: 1;
+  text-align: justify;
+}
+
+.letter-card.show {
+  top: 60%;
+  opacity: 1;
+}
+
+.letter-card h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.letter-card .from {
+  margin-top: 20px;
+  text-align: right;
+  font-weight: bold;
+}
